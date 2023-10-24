@@ -42,7 +42,7 @@ create({
   })
 
 async function start(client: Whatsapp) {
-  const storeName = "Pizzaria Los Italianos"
+  const storeName = "Imobiliária"
 
   client.onMessage(async (message: Message) => {
     if (!message.body || message.isGroupMsg) return
@@ -50,7 +50,7 @@ async function start(client: Whatsapp) {
     const customerPhone = `+${message.from.replace("@c.us", "")}`
     const customerName = message.author
     const customerKey = `customer:${customerPhone}:chat`
-    const orderCode = `#sk-${("00000" + Math.random()).slice(-5)}`
+    const orderCode = `#Consulta-${("00000" + Math.random()).slice(-5)}`
 
     const lastChat = JSON.parse((await redis.get(customerKey)) || "{}")
 
@@ -102,7 +102,7 @@ async function start(client: Whatsapp) {
       customerChat.messages.push({
         role: "user",
         content:
-          "Gere um resumo de pedido para registro no sistema da pizzaria, quem está solicitando é um robô.",
+          "Gere um resumo de consulta para registro no sistema da imobiliaria, quem está solicitando é um robô.",
       })
 
       const content =
