@@ -1,6 +1,6 @@
-# Food Commerce GPT
+# Auto Atendimento AI
 
-Bot de atendimento para o Food Commerce utilizando modelo GPT da OpenAI. 
+ 
 
 ## Como funciona?
 
